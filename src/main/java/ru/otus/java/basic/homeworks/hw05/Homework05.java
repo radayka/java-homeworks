@@ -35,7 +35,9 @@ public class Homework05 {
 
     public static void fillArrayEnteredDigit(int[] arr, int digit) {
         System.out.println("Третий метод:");
-        Arrays.fill(arr, digit);
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = digit;
+        }
         System.out.println(Arrays.toString(arr));
     }
 
