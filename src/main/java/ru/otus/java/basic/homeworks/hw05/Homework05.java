@@ -51,16 +51,17 @@ public class Homework05 {
 
     public static void printWhichHalfIsBigger(int[] arr) {
         System.out.println("Пятый метод:");
-        int thirstHalf = 0;
+        int firstHalf = 0;
         int secondHalf = 0;
-        for (int i = 0; i < arr.length / 2; i++) {
-            thirstHalf += arr[i];
+        int mid = arr.length / 2;
+        for (int i = 0; i < mid; i++) {
+            firstHalf += arr[i];
         }
-        for (int j = arr.length - 1; j > arr.length / 2; j--) {
+        for (int j = mid; j < arr.length; j++) {
             secondHalf += arr[j];
         }
-        if (thirstHalf > secondHalf) {
-            System.out.println("Первая половина больше: " + thirstHalf);
+        if (firstHalf > secondHalf) {
+            System.out.println("Первая половина больше: " + firstHalf);
         } else {
             System.out.println("Вторая половина больше: " + secondHalf);
         }
