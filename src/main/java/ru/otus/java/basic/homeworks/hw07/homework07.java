@@ -8,19 +8,10 @@ public class homework07 {
                 {0, 1, 3, 11}};
 
         System.out.println(sumOfPositiveElements(array));
-        doASquare(10);
+        doASquare(5);
         zeroingDiagonalValues(array);
         System.out.println(findMax(array));
-        System.out.println(sumOfElementsSecondString(array));
-    }
-
-    public static void print2dArrStr(String[][] array) {
-        for (String[] strings : array) {
-            for (String string : strings) {
-                System.out.print(string + " ");
-            }
-            System.out.println();
-        }
+        System.out.println(sumElementsOfSecondString(array));
     }
 
     public static void print2dArrInt(int[][] array) {
@@ -45,21 +36,12 @@ public class homework07 {
     }
 
     public static void doASquare(int size) {
-        String[][] square = new String[size][size];
         for (int i = 0; i < size; i++) {
-            square[0][i] = "*";
-            square[i][0] = "*";
-            square[size - 1][i] = "*";
-            square[i][size - 1] = "*";
-        }
-        for (int i = 0; i < square.length; i++) {
-            for (int j = 0; j < square[i].length; j++) {
-                if (square[i][j] == null) {
-                    square[i][j] = " ";
-                }
+            for (int j = 0; j < size; j++) {
+                System.out.print("* ");
             }
+            System.out.println();
         }
-        print2dArrStr(square);
     }
 
     public static void zeroingDiagonalValues(int[][] array) {
@@ -81,7 +63,7 @@ public class homework07 {
         return max;
     }
 
-    public static int sumOfElementsSecondString(int[][] array) {
+    public static int sumElementsOfSecondString(int[][] array) {
         if (array.length > 1) {
             int sum = 0;
             for (int i = 0; i < array[1].length; i++) {
