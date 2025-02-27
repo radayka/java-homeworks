@@ -52,32 +52,4 @@ public class Box {
         }
         box.hasItem = false;
     }
-
-    public boolean isOpen() {
-        return isOpen;
-    }
-
-    public void setOpen(boolean open) {
-        isOpen = open;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public boolean isHasItem() {
-        return hasItem;
-    }
-
-    public void setHasItem(boolean hasItem) {
-        this.hasItem = hasItem;
-    }
 }
