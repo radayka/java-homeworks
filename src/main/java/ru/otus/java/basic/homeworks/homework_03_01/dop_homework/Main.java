@@ -9,5 +9,7 @@ public class Main {
 
         box.deleteItem(box);
         box.info(box);
+        box.close(box);
+
     }
 }

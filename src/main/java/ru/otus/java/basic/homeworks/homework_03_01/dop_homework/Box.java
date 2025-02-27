@@ -7,9 +7,9 @@ public class Box {
     private boolean isOpen;
 
     private final int size;
-    private String color;
+    private final String color;
     private boolean hasItem = false;
-    private String[] itemL = new String[1];
+    private final String[] itemList = new String[1];
 
 
     public Box(String color, int size) {
@@ -28,60 +28,28 @@ public class Box {
     }
 
     public void info(Box box) {
+        System.out.println();
         System.out.println("Цвет коробки: " + box.color);
         System.out.println("Размер коробки: " + box.size);
-        System.out.println("В коробке есть: " + box.itemL[0]);
+        System.out.println("В коробке есть: " + box.itemList[0]);
+        System.out.println();
     }
 
     public void addItem(Box box, String item) {
         if (!box.hasItem) {
             if (box.isOpen) {
-                Arrays.fill(itemL, item);
+                Arrays.fill(itemList, item);
             }
         }
+        box.hasItem = true;
+        System.out.println("Предмет " + item + " положили в коробоку");
     }
 
     public void deleteItem(Box box) {
-        if(box.hasItem) {
-            if (box.isOpen) {
-                Arrays.fill(itemL, "пустота");
-            }
+        if (box.hasItem) {
+            System.out.println("Предмет " + itemList[0] + " выкинули из коробоки");
+            Arrays.fill(itemList, "ничего");
         }
-    }
-
-    public boolean isOpen() {
-        return isOpen;
-    }
-
-    public void setOpen(boolean open) {
-        isOpen = open;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public boolean isHasItem() {
-        return hasItem;
-    }
-
-    public void setHasItem(boolean hasItem) {
-        this.hasItem = hasItem;
-    }
-
-    public String[] getItemL() {
-        return itemL;
-    }
-
-    public void setItemL(String[] itemL) {
-        this.itemL = itemL;
+        box.hasItem = false;
     }
 }
