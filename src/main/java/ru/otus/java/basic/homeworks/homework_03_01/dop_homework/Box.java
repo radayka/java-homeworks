@@ -28,9 +28,11 @@ public class Box {
     }
 
     public void info(Box box) {
+        System.out.println();
         System.out.println("Цвет коробки: " + box.color);
         System.out.println("Размер коробки: " + box.size);
         System.out.println("В коробке есть: " + box.itemL[0]);
+        System.out.println();
     }
 
     public void addItem(Box box, String item) {
@@ -39,14 +41,16 @@ public class Box {
                 Arrays.fill(itemL, item);
             }
         }
+        box.hasItem = true;
+        System.out.println("Предмет " + item + " положили в коробоку");
     }
 
     public void deleteItem(Box box) {
-        if(box.hasItem) {
-            if (box.isOpen) {
-                Arrays.fill(itemL, "пустота");
-            }
+        if (box.hasItem) {
+            System.out.println("Предмет " + itemL[0] + " выкинули из коробоки");
+            Arrays.fill(itemL, "ничего");
         }
+        box.hasItem = false;
     }
 
     public boolean isOpen() {
@@ -75,13 +79,5 @@ public class Box {
 
     public void setHasItem(boolean hasItem) {
         this.hasItem = hasItem;
-    }
-
-    public String[] getItemL() {
-        return itemL;
-    }
-
-    public void setItemL(String[] itemL) {
-        this.itemL = itemL;
     }
 }
