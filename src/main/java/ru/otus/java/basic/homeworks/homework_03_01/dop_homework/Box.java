@@ -9,7 +9,7 @@ public class Box {
     private final int size;
     private String color;
     private boolean hasItem = false;
-    private String[] itemL = new String[1];
+    private final String[] itemList = new String[1];
 
 
     public Box(String color, int size) {
@@ -31,14 +31,14 @@ public class Box {
         System.out.println();
         System.out.println("Цвет коробки: " + box.color);
         System.out.println("Размер коробки: " + box.size);
-        System.out.println("В коробке есть: " + box.itemL[0]);
+        System.out.println("В коробке есть: " + box.itemList[0]);
         System.out.println();
     }
 
     public void addItem(Box box, String item) {
         if (!box.hasItem) {
             if (box.isOpen) {
-                Arrays.fill(itemL, item);
+                Arrays.fill(itemList, item);
             }
         }
         box.hasItem = true;
@@ -47,8 +47,8 @@ public class Box {
 
     public void deleteItem(Box box) {
         if (box.hasItem) {
-            System.out.println("Предмет " + itemL[0] + " выкинули из коробоки");
-            Arrays.fill(itemL, "ничего");
+            System.out.println("Предмет " + itemList[0] + " выкинули из коробоки");
+            Arrays.fill(itemList, "ничего");
         }
         box.hasItem = false;
     }
