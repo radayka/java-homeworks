@@ -7,7 +7,7 @@ public class Box {
     private boolean isOpen;
 
     private final int size;
-    private String color;
+    private final String color;
     private boolean hasItem = false;
     private final String[] itemList = new String[1];
 
