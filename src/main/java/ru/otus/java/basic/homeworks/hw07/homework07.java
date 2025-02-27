@@ -3,15 +3,16 @@ package ru.otus.java.basic.homeworks.hw07;
 public class homework07 {
     public static void main(String[] args) {
         int[][] array = {{1, 0, 0, 1},
-                {0, 2, 0, 1},
-                {0, 1, 3, 10},
-                {0, 1, 3, 11}};
+                        {0, 2, 0, 1},
+                        {0, 1, 3, 10},
+                        {0, 1, 3, 11}};
 
         System.out.println(sumOfPositiveElements(array));
         doASquare(5);
         zeroingDiagonalValues(array);
+        print2dArrInt(array);
         System.out.println(findMax(array));
-        System.out.println(sumElementsOfSecondString(array));
+        System.out.println(sumElementsOfSecondRow(array));
     }
 
     public static void print2dArrInt(int[][] array) {
@@ -48,7 +49,6 @@ public class homework07 {
         for (int i = 0; i < array.length; i++) {
             array[i][i] = 0;
         }
-        print2dArrInt(array);
     }
 
     public static int findMax(int[][] array) {
@@ -63,8 +63,8 @@ public class homework07 {
         return max;
     }
 
-    public static int sumElementsOfSecondString(int[][] array) {
-        if (array.length > 1) {
+    public static int sumElementsOfSecondRow(int[][] array) {
+        if (array.length >= 2) {
             int sum = 0;
             for (int i = 0; i < array[1].length; i++) {
                 sum += array[1][i];
