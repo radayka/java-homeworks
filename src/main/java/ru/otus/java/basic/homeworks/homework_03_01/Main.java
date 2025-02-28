@@ -16,7 +16,7 @@ public class Main {
 
         for (User user : users) {
             if (user.yearOfBirth() <= 1985) {
-                User.info(user);
+                user.info();
             }
         }
     }
