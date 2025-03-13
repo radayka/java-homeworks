@@ -1,9 +1,9 @@
 package ru.otus.java.basic.homeworks.homework_03_02.Animals;
 
-public abstract class Animal {
+public class Animal {
     String name;
-    int runningSpeed;
-    int swimmingSpeed;
+    double runningSpeed;
+    double swimmingSpeed;
     int endurance;
 
     public Animal(String name, int runningSpeed, int swimmingSpeed, int endurance) {
@@ -13,7 +13,28 @@ public abstract class Animal {
         this.endurance = endurance;
     }
 
-    public abstract int run(int distance);
-    public abstract int swim(int distance);
+    public void info() {
+        System.out.println("Name: " + name);
+        System.out.println("RunningSpeed: " + runningSpeed);
+        System.out.println("SwimmingSpeed: " + swimmingSpeed);
+        System.out.println("Endurance: " + endurance);
+        System.out.println();
+    }
+
+    public double run(int distance) {
+        endurance -= distance;
+        double time = distance / runningSpeed;
+        if (endurance < 0) {
+            time -= 1;
+            System.out.println("У" + name + " появилась усталость");
+        }
+        System.out.println(name + " пробежала " + distance + "м" + " за " + time + "с");
+        return time;
+    }
+
+    public double swim(int distance) {
+        System.out.println(name + " не умеет плавать");
+        return 0;
+    }
 
 }

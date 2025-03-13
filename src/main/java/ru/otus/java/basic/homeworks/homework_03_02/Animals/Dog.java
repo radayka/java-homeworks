@@ -7,11 +7,14 @@ public class Dog extends Animal {
     }
 
     @Override
-    public int run(int distance){
-        return 1;
-    }
-    @Override
-    public int swim(int distance){
-        return 1;
+    public double swim(int distance) {
+        double time = distance / swimmingSpeed;
+        endurance -= distance * 2;
+        if (endurance < 0) {
+            time -= 1;
+            System.out.println("У животного появилась усталость");
+        }
+        System.out.println(name + " проплыл " + distance + "м" + " за " + time + "с");
+        return time;
     }
 }
