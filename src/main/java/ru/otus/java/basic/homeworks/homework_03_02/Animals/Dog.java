@@ -11,8 +11,8 @@ public class Dog extends Animal {
         double time = distance / swimmingSpeed;
         endurance -= distance * 2;
         if (endurance < 0) {
-            time -= 1;
             System.out.println("У животного появилась усталость");
+            return -1;
         }
         System.out.println(name + " проплыл " + distance + "м" + " за " + time + "с");
         return time;

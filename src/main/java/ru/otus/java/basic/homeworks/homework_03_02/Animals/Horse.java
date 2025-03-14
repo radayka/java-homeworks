@@ -11,8 +11,8 @@ public class Horse extends Animal {
         double time = distance / swimmingSpeed;
         endurance -= distance * 4;
         if (endurance < 0) {
-            time -= 1;
             System.out.println("У животного появилась усталость");
+            return -1;
         }
         System.out.println(name + " проплыла " + distance + "м" + " за " + time + "с");
         return time;
