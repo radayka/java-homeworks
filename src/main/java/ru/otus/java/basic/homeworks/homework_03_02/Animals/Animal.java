@@ -5,6 +5,7 @@ public class Animal {
     double runningSpeed;
     double swimmingSpeed;
     int endurance;
+    int coef = 0;
 
     public Animal(String name, int runningSpeed, int swimmingSpeed, int endurance) {
         this.name = name;
@@ -22,19 +23,25 @@ public class Animal {
     }
 
     public double run(int distance) {
-        endurance -= distance;
-        double time = distance / runningSpeed;
-        if (endurance < 0) {
-            System.out.println("У" + name + " появилась усталость");
+        if (endurance <= 0) {
+            System.out.println("У " + name + " появилась усталость");
             return -1;
         }
+        double time = distance / swimmingSpeed;
+        endurance -= distance;
         System.out.println(name + " пробежала " + distance + "м" + " за " + time + "с");
         return time;
     }
 
     public double swim(int distance) {
-        System.out.println(name + " не умеет плавать");
-        return 0;
+        if (endurance <= 0) {
+            System.out.println("У " + name + " появилась усталость");
+            return -1;
+        }
+        double time = distance / swimmingSpeed;
+        endurance -= distance * coef;
+        System.out.println(name + " проплыл " + distance + "м" + " за " + time + "с");
+        return time;
     }
 
 }
