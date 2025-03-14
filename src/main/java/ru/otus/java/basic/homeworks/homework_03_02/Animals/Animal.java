@@ -25,8 +25,8 @@ public class Animal {
         endurance -= distance;
         double time = distance / runningSpeed;
         if (endurance < 0) {
-            time -= 1;
             System.out.println("У" + name + " появилась усталость");
+            return -1;
         }
         System.out.println(name + " пробежала " + distance + "м" + " за " + time + "с");
         return time;
