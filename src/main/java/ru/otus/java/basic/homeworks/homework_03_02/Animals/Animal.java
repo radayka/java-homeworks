@@ -2,22 +2,22 @@ package ru.otus.java.basic.homeworks.homework_03_02.Animals;
 
 public class Animal {
     String name;
-    double runningSpeed;
-    double swimmingSpeed;
+    double runningEnduranceCost;
+    double swimmingEnduranceCost;
     int endurance;
     int coef = 0;
 
-    public Animal(String name, int runningSpeed, int swimmingSpeed, int endurance) {
+    public Animal(String name, double runningEnduranceCost, int swimmingEnduranceCost, int endurance) {
         this.name = name;
-        this.runningSpeed = runningSpeed;
-        this.swimmingSpeed = swimmingSpeed;
+        this.runningEnduranceCost = runningEnduranceCost;
+        this.swimmingEnduranceCost = swimmingEnduranceCost;
         this.endurance = endurance;
     }
 
     public void info() {
         System.out.println("Name: " + name);
-        System.out.println("RunningSpeed: " + runningSpeed);
-        System.out.println("SwimmingSpeed: " + swimmingSpeed);
+        System.out.println("RunningSpeed: " + runningEnduranceCost);
+        System.out.println("SwimmingSpeed: " + swimmingEnduranceCost);
         System.out.println("Endurance: " + endurance);
         System.out.println();
     }
@@ -27,7 +27,7 @@ public class Animal {
             System.out.println("У " + name + " появилась усталость");
             return -1;
         }
-        double time = distance / swimmingSpeed;
+        double time = distance / swimmingEnduranceCost;
         endurance -= distance;
         System.out.println(name + " пробежала " + distance + "м" + " за " + time + "с");
         return time;
@@ -38,7 +38,7 @@ public class Animal {
             System.out.println("У " + name + " появилась усталость");
             return -1;
         }
-        double time = distance / swimmingSpeed;
+        double time = distance / swimmingEnduranceCost;
         endurance -= distance * coef;
         System.out.println(name + " проплыл " + distance + "м" + " за " + time + "с");
         return time;
