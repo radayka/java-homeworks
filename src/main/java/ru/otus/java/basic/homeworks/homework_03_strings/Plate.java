@@ -13,9 +13,17 @@ public class Plate {
 
     private int currentCapacity;
 
-    public Plate(int maxCapacity, int currentCapacity) {
+    public Plate(int maxCapacity) {
         this.maxCapacity = maxCapacity;
-        this.currentCapacity = currentCapacity;
+        this.currentCapacity = maxCapacity;
+    }
+
+    public boolean tryTakeFood(int amount) {
+        if (currentCapacity >= amount) {
+            currentCapacity -= amount;
+            return true;
+        }
+        return false;
     }
 
     public void addFood(int food) {

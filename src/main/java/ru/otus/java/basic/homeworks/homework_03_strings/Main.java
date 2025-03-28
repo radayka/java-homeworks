@@ -7,7 +7,7 @@ public class Main {
         Cat borzik = new Cat("borzik", 30);
         Cat chorzik = new Cat("chorzik", 40);
         Cat[] arrayOfCats = new Cat[]{barsik, murzik, borzik, chorzik};
-        Plate plate = new Plate(1000, 500);
+        Plate plate = new Plate(1000);
         plate.addFood(200);
         plate.removeFood(200);
         for (Cat c : arrayOfCats) {

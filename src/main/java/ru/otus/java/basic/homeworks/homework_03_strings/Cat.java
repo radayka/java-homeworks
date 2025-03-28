@@ -21,8 +21,7 @@ public class Cat {
     }
 
     public void eat(Plate plate) {
-        if (plate.getCurrentCapacity() >= appetit) {
-            plate.setCurrentCapacity(plate.getCurrentCapacity() - appetit);
+        if (plate.tryTakeFood(appetit)) {
             fullness = true;
             System.out.println("Кот " + name + " поел");
             System.out.println("В тарелке осталось " + plate.getCurrentCapacity() + " еды");
