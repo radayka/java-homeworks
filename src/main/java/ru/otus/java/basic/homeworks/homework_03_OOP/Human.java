@@ -16,6 +16,7 @@ public class Human {
         if (currentTypesOfMovement == null) {
             currentTypesOfMovement = new OnFoot();
             currentTypesOfMovement.move(locality, distance);
+            return;
         }
         currentTypesOfMovement.move(locality, distance);
     }
