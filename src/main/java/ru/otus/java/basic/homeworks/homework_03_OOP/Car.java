@@ -1,6 +1,6 @@
 package ru.otus.java.basic.homeworks.homework_03_OOP;
 
-public class Car implements TypesOfMovement {
+public class Car implements Transport {
     private int fuel;
 
     public Car(int fuel) {
@@ -9,6 +9,10 @@ public class Car implements TypesOfMovement {
 
     @Override
     public boolean move(Locality locality, int distance) {
+        if(fuel < distance){
+            System.out.println("Недостаточно топлива!");
+            return false;
+        }
         if (locality.equals(Locality.SWAMP)) {
             System.out.println("Невозможно передвигаться на машине по болоту");
             return false;

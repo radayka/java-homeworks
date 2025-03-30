@@ -2,33 +2,34 @@ package ru.otus.java.basic.homeworks.homework_03_OOP;
 
 public class Human {
     private final String name;
-    private TypesOfMovement currentTypesOfMovement;
+    private Transport currentTransport;
 
     public Human(String name) {
         this.name = name;
     }
 
-    public TypesOfMovement getCurrentTransport() {
-        return currentTypesOfMovement;
+    public Transport getCurrentTransport() {
+        return currentTransport;
     }
 
-    public void move(Locality locality, int distance) {
-        if (currentTypesOfMovement == null) {
-            currentTypesOfMovement = new OnFoot();
-            currentTypesOfMovement.move(locality, distance);
-            return;
+    public boolean move(Locality locality, int distance) {
+        if (currentTransport == null) {
+            currentTransport = new OnFoot();
+            currentTransport.move(locality, distance);
+            return true;
         }
-        currentTypesOfMovement.move(locality, distance);
+        currentTransport.move(locality, distance);
+        return true;
     }
 
-    public void mount(TypesOfMovement newTypesOfMovement) {
-        currentTypesOfMovement = newTypesOfMovement;
-        System.out.println("Человек- " + name + " сел за транспорт: " + newTypesOfMovement.getName());
+    public void mount(Transport newTransport) {
+        currentTransport = newTransport;
+        System.out.println("Человек- " + name + " сел за транспорт: " + newTransport.getName());
     }
 
     public void disMount() {
         System.out.println("Человек- " + name + " слез с транспорта: " + getCurrentTransport().getName());
-        currentTypesOfMovement = new OnFoot();
+        currentTransport = new OnFoot();
     }
 
 }

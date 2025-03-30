@@ -1,6 +1,6 @@
 package ru.otus.java.basic.homeworks.homework_03_OOP;
 
-public class Bicycle implements TypesOfMovement {
+public class Bicycle implements Transport {
     @Override
     public boolean move(Locality locality, int distance) {
         if (locality.equals(Locality.SWAMP)) {
