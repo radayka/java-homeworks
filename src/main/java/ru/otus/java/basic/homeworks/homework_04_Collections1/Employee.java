@@ -17,7 +17,7 @@ public class Employee {
         this.age = age;
     }
 
-    public static List<String> getArrayOfNames(List<Employee> employees) {
+    public static List<String> getEmployeeNames(List<Employee> employees) {
         List<String> list = new ArrayList<>();
         for (Employee employee : employees) {
             list.add(employee.name);
@@ -25,7 +25,7 @@ public class Employee {
         return list;
     }
 
-    public static List<String> checkAgeLimit(List<Employee> employees, int minAge) {
+    public static List<String> filterEmployeesByMinAge(List<Employee> employees, int minAge) {
         List<String> list = new ArrayList<>();
         for (Employee employee : employees) {
             if (employee.age >= minAge) {
@@ -35,7 +35,7 @@ public class Employee {
         return list;
     }
 
-    public static boolean checkAverageAge(List<Employee> employees, int minAvgAge) {
+    public static boolean isAverageAgeAbove(List<Employee> employees, int minAvgAge) {
         int allAge = 0;
         for (Employee employee : employees) {
             allAge += employee.age;
@@ -44,7 +44,7 @@ public class Employee {
         return avrAge > minAvgAge;
     }
 
-    public static Employee getTheYongestEmployee(List<Employee> employees) {
+    public static Employee getYoungestEmployee(List<Employee> employees) {
         Employee yongest = employees.getFirst();
         for (Employee employee : employees) {
             if (employee.age < yongest.age) {
