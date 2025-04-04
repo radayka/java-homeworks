@@ -18,6 +18,9 @@ public class Employee {
     }
 
     public static List<String> getEmployeeNames(List<Employee> employees) {
+        if (employees.isEmpty()) {
+            return new ArrayList<>();
+        }
         List<String> list = new ArrayList<>();
         for (Employee employee : employees) {
             list.add(employee.name);
@@ -26,6 +29,9 @@ public class Employee {
     }
 
     public static List<String> filterEmployeesByMinAge(List<Employee> employees, int minAge) {
+        if (employees.isEmpty()) {
+            return new ArrayList<>();
+        }
         List<String> list = new ArrayList<>();
         for (Employee employee : employees) {
             if (employee.age >= minAge) {
@@ -36,6 +42,9 @@ public class Employee {
     }
 
     public static boolean isAverageAgeAbove(List<Employee> employees, int minAvgAge) {
+        if (employees.isEmpty()) {
+            return false;
+        }
         int allAge = 0;
         for (Employee employee : employees) {
             allAge += employee.age;
@@ -45,6 +54,9 @@ public class Employee {
     }
 
     public static Employee getYoungestEmployee(List<Employee> employees) {
+        if (employees.isEmpty()) {
+            return null;
+        }
         Employee yongest = employees.getFirst();
         for (Employee employee : employees) {
             if (employee.age < yongest.age) {
