@@ -57,13 +57,13 @@ public class Employee {
         if (employees.isEmpty()) {
             return null;
         }
-        Employee yongest = employees.getFirst();
+        Employee youngest = employees.get(0);
         for (Employee employee : employees) {
-            if (employee.age < yongest.age) {
-                yongest = employee;
+            if (employee.age < youngest.age) {
+                youngest = employee;
             }
         }
-        return yongest;
+        return youngest;
     }
 
     @Override

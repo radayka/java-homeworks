@@ -27,9 +27,7 @@ public class Main {
 
     public static void replaceAllElementsWithNumber(int digit, List<Integer> list) {
         for (int i = 0; i < list.size(); i++) {
-            if (list.get(i) != null) {
                 list.set(i, digit);
-            }
         }
     }
 
