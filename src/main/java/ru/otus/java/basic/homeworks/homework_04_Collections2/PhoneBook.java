@@ -16,7 +16,7 @@ public class PhoneBook {
     }
 
     public Set<String> find(String person) {
-        return phoneBook.get(person);
+        return phoneBook.getOrDefault(person, Collections.emptySet());
     }
 
     public boolean containsPhoneNumber(String number) {
