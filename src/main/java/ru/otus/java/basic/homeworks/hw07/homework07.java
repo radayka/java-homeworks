@@ -3,9 +3,9 @@ package ru.otus.java.basic.homeworks.hw07;
 public class homework07 {
     public static void main(String[] args) {
         int[][] array = {{1, 0, 0, 1},
-                        {0, 2, 0, 1},
-                        {0, 1, 3, 10},
-                        {0, 1, 3, 11}};
+                {0, 2, 0, 1},
+                {0, 1, 3, 10},
+                {0, 1, 3, 11}};
 
         System.out.println(sumOfPositiveElements(array));
         doASquare(5);

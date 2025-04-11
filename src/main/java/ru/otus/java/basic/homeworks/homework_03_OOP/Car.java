@@ -9,7 +9,7 @@ public class Car implements Transport {
 
     @Override
     public boolean move(Locality locality, int distance) {
-        if(fuel < distance){
+        if (fuel < distance) {
             System.out.println("Недостаточно топлива!");
             return false;
         }
