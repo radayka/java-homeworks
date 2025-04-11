@@ -9,7 +9,7 @@ public class PersonDataBase {
 
     public PersonDataBase(List<Person> personList) {
         persons = new HashMap<>();
-        personList.forEach(p -> persons.put(p.getId(), p));
+        personList.forEach(p -> persons.put(p.id(), p));
     }
 
     public Person findById(Long id) {
@@ -17,11 +17,11 @@ public class PersonDataBase {
     }
 
     public void add(Person person) {
-        persons.put(person.getId(), person);
+        persons.put(person.id(), person);
     }
 
     public boolean isManager(Person person) {
-        return person.getPosition() == Position.MANAGER || person.getPosition() == Position.DIRECTOR || person.getPosition() == Position.BRANCH_DIRECTOR || person.getPosition() == Position.SENIOR_MANAGER;
+        return person.position() == Position.MANAGER || person.position() == Position.DIRECTOR || person.position() == Position.BRANCH_DIRECTOR || person.position() == Position.SENIOR_MANAGER;
     }
 
     public boolean isEmployee(Long id) {
