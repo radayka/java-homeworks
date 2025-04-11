@@ -5,6 +5,15 @@ import java.util.Objects;
 public class Person {
     private final String name;
     private final Position position;
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     private final Long id;
 
     public Long getId() {

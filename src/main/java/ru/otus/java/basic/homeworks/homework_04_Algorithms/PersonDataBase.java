@@ -21,10 +21,10 @@ public class PersonDataBase {
     }
 
     public boolean isManager(Person person) {
-        return false;
+        return person.getPosition() == Position.MANAGER || person.getPosition() == Position.DIRECTOR || person.getPosition() == Position.BRANCH_DIRECTOR || person.getPosition() == Position.SENIOR_MANAGER;
     }
 
     public boolean isEmployee(Long id) {
-        return false;
+        return !isManager(persons.get(id));
     }
 }
