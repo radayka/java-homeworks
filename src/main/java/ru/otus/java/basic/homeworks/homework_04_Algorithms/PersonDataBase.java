@@ -40,9 +40,4 @@ public class PersonDataBase {
             }
         }
     }
-    public static void quickSort(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            int pivot = array[i];
-        }
-    }
 }
