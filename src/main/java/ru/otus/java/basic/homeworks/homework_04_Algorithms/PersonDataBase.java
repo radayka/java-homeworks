@@ -1,11 +1,11 @@
 package ru.otus.java.basic.homeworks.homework_04_Algorithms;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class PersonDataBase {
+
     public Map<Long, Person> persons;
+    Set<Position> positionSetOfManager = new HashSet<>(Arrays.asList(Position.MANAGER, Position.DIRECTOR, Position.SENIOR_MANAGER, Position.BRANCH_DIRECTOR));
 
     public PersonDataBase(List<Person> personList) {
         persons = new HashMap<>();
@@ -21,23 +21,10 @@ public class PersonDataBase {
     }
 
     public boolean isManager(Person person) {
-        return person.position() == Position.MANAGER || person.position() == Position.DIRECTOR || person.position() == Position.BRANCH_DIRECTOR || person.position() == Position.SENIOR_MANAGER;
+        return positionSetOfManager.contains(person.position());
     }
 
     public boolean isEmployee(Long id) {
         return !isManager(persons.get(id));
-    }
-
-    public static void bubbleSort(int[] array) {
-
-        for (int i = 0; i < array.length - 1; i++) {
-            for (int j = 0; j < array.length - 1; j++) {
-                int temp = array[j];
-                if (array[j] > array[j + 1]) {
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
-                }
-            }
-        }
     }
 }
