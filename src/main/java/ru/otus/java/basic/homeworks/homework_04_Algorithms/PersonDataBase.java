@@ -27,4 +27,22 @@ public class PersonDataBase {
     public boolean isEmployee(Long id) {
         return !isManager(persons.get(id));
     }
+
+    public static void bubbleSort(int[] array) {
+
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - 1; j++) {
+                int temp = array[j];
+                if (array[j] > array[j + 1]) {
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    }
+    public static void quickSort(int[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            int pivot = array[i];
+        }
+    }
 }
