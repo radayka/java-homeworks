@@ -5,7 +5,7 @@ import java.util.*;
 public class PersonDataBase {
 
     public Map<Long, Person> persons;
-    Set<Position> positionSetOfManager = new HashSet<>(Arrays.asList(Position.MANAGER, Position.DIRECTOR, Position.SENIOR_MANAGER, Position.BRANCH_DIRECTOR));
+    Set<Position> positionSetOfManager = EnumSet.of(Position.MANAGER, Position.DIRECTOR, Position.BRANCH_DIRECTOR, Position.SENIOR_MANAGER);
 
     public PersonDataBase(List<Person> personList) {
         persons = new HashMap<>();
