@@ -6,22 +6,24 @@ import java.util.*;
 import java.io.*;
 import java.util.*;
 
+import java.io.*;
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String projectRoot = System.getProperty("user.dir"); // корень проекта
-        List<File> textFiles = getTextFiles(projectRoot);
-
+        File projectRoot = new File(".");
+        List<File> textFiles = getTextFiles(projectRoot.getPath());
         if (textFiles.isEmpty()) {
-            System.out.println("Текстовые файлы не найдены.");
+            System.out.println("Текстовые файлы не найдены. Завершение программы.");
             return;
         }
+        printAllFileByPath(textFiles);
+        File selectedFile = chooseTheFile(projectRoot);
+        fillingTheFile(selectedFile);
+    }
 
-        System.out.println("Список доступных текстовых файлов:");
-        for (File file : textFiles) {
-            System.out.println("- " + file.getName());
-        }
-
+    public static File chooseTheFile(File projectRoot) {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Введите имя файла, с которым хотите работать: ");
         String filename = scanner.nextLine();
         File selectedFile = new File(projectRoot, filename);
@@ -33,6 +35,11 @@ public class Main {
             printFileContent(selectedFile);
         }
 
+        return selectedFile;
+    }
+
+    public static void fillingTheFile(File selectedFile) {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("\nВведите строки для записи в файл (для выхода введите `exit`):");
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(selectedFile, true))) {
             while (true) {
@@ -47,6 +54,17 @@ public class Main {
             System.out.println("Запись завершена.");
         } catch (IOException e) {
             System.err.println("Ошибка при записи в файл: " + e.getMessage());
+        }
+    }
+
+    public static void printAllFileByPath(List<File> textFiles) {
+        if (textFiles.isEmpty()) {
+            System.out.println("Текстовые файлы не найдены.");
+            return;
+        }
+        System.out.println("Список доступных текстовых файлов:");
+        for (File file : textFiles) {
+            System.out.println("- " + file.getName());
         }
     }
 
@@ -76,4 +94,3 @@ public class Main {
         }
     }
 }
-
