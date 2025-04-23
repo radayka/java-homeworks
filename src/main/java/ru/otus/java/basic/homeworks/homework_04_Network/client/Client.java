@@ -13,7 +13,7 @@ public class Client {
             try (Socket socket = new Socket("localhost", 8091)) {
                 ExampleClient exampleClient = new ExampleClient(socket.getInputStream(), socket.getOutputStream());
                 String userInput = sc.nextLine();
-                if (userInput.equals("exit")) {
+                if (userInput.equalsIgnoreCase("exit")) {
                     exampleClient.send(userInput);
                     break;
                 }
